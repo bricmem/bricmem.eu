@@ -1,0 +1,54 @@
+{{ $uhdLight := resources.Get "images/logos/logo-uhd-light.svg" }}
+{{ $uhdDark := resources.Get "images/logos/logo-uhd-dark.svg" }}
+{{ $kipLight := resources.Get "images/logos/logo-kip-light.svg" }}
+{{ $kipDark := resources.Get "images/logos/logo-kip-dark.svg" }}
+{{ $ercLight := resources.Get "images/logos/logo-erc-light.png" }}
+{{ $ercDark := resources.Get "images/logos/logo-erc-dark.png" }}
+
+<style>
+:root {
+  --logo-uhd: url('{{ $uhdLight.RelPermalink }}');
+  --logo-kip: url('{{ $kipLight.RelPermalink }}');
+  --logo-erc: url('{{ $ercLight.RelPermalink }}');
+}
+.dark {
+  --logo-uhd: url('{{ $uhdDark.RelPermalink }}');
+  --logo-kip: url('{{ $kipDark.RelPermalink }}');
+  --logo-erc: url('{{ $ercDark.RelPermalink }}');
+}
+
+/* Partner logo components */
+.partner-logo {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: auto;
+  height: 9.765625em;
+}
+
+.partner-logo--uhd {
+  background-image: var(--logo-uhd);
+  width: 12em;
+}
+
+.partner-logo--kip {
+  background-image: var(--logo-kip);
+  width: 12em;
+}
+.partner-logo--erc {
+  background-image: var(--logo-erc);
+  width: 12em;
+}
+
+/* Footer logo styling */
+.footer-logo--erc {
+  background-image: var(--logo-erc);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 5.859375em;
+  width: 11.71875em;
+  display: inline-block;
+}
+</style>

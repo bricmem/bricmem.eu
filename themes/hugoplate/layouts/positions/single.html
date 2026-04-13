@@ -1,0 +1,43 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          {{ $image:= .Params.image | default "/images/image-placeholder.png" }}
+          <div
+            class="mb-10 overflow-hidden rounded"
+            style="aspect-ratio: 1096 / 480;">
+            {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "h-full w-full object-cover") }}
+          </div>
+          <div class="content">
+            {{ .Content }}
+          </div>
+          {{ $rawTags := .Params.tags }}
+          {{ $tags := slice }}
+          {{ if $rawTags }}
+            {{ if reflect.IsSlice $rawTags }}
+              {{ $tags = $rawTags }}
+            {{ else }}
+              {{ $tags = slice $rawTags }}
+            {{ end }}
+          {{ end }}
+          {{ if gt (len $tags) 0 }}
+            <div class="mt-10 flex items-center">
+              <h5 class="mr-3">Tags :</h5>
+              <ul>
+                {{ range $i, $tag := $tags }}
+                  <li class="inline-block">
+                    {{ partial "components/tag-pill" (dict "Tag" $tag "Active" false) }}
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          {{ end }}
+        </article>
+      </div>
+    </div>
+  </section>
+{{ end }}

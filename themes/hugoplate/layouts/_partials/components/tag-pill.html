@@ -1,0 +1,14 @@
+{{ $tag := .Tag }}
+{{ $active := .Active }}
+{{ $slug := $tag | urlize | lower }}
+{{ $tagConfig := index site.Data.tags $slug }}
+{{ $baseColor := "" }}
+{{ if $tagConfig }}
+  {{ $baseColor = $tagConfig.color }}
+{{ end }}
+<a
+  class="tag-pill{{ if $active }}active{{ end }}"
+  {{ if $baseColor }}style="--tag-base: {{ $baseColor }};"{{ end }}
+  href="{{ `tags/` | relLangURL }}{{ $slug }}/">
+  {{ $tag | humanize }}
+</a>

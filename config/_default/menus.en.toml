@@ -1,0 +1,54 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Publications"
+url = "/publications/"
+weight = 2
+
+[[main]]
+name = "People"
+url = "/people/"
+weight = 3
+
+[[main]]
+name = "News"
+url = "/blog/"
+weight = 4
+
+[[main]]
+name = "Positions"
+url = "/positions/"
+weight = 5
+
+
+# footer menu
+[[footer]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[footer]]
+name = "Publications"
+url = "/publications/"
+weight = 2
+
+[[footer]]
+name = "People"
+url = "/people/"
+weight = 3
+
+[[footer]]
+name = "News"
+url = "/blog/"
+weight = 4
+
+[[footer]]
+name = "Positions"
+url = "/positions/"
+weight = 5

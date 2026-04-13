@@ -1,0 +1,37 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+
+  <section class="section">
+    <div class="container">
+      <div class="row gx-5">
+        <!-- posts for this term -->
+        <div class="lg:col-8">
+          <div class="row">
+            {{ range .Data.Pages }}
+              <div class="md:col-6 mb-14">
+                {{ if eq .Section "blog" }}
+                  {{ partial "components/blog-card" . }}
+                {{ else if eq .Section "positions" }}
+                  {{ partial "components/position-card" . }}
+                {{ else }}
+                  <div class="bg-body dark:bg-darkmode-body">
+                    <h4 class="mb-3">
+                      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h4>
+                    <p class="mb-6">{{ .Summary | plainify }}</p>
+                    <a
+                      class="btn btn-outline-primary btn-sm"
+                      href="{{ .RelPermalink }}"
+                      >Read More</a
+                    >
+                  </div>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

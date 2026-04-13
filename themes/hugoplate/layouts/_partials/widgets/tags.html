@@ -1,0 +1,17 @@
+<!-- tags -->
+{{ if isset site.Taxonomies "tags" }}
+  {{ if not (eq (len site.Taxonomies.tags) 0) }}
+    <div class="mb-8">
+      <h5 class="mb-6">{{ T "tags" | default "Tags" }}</h5>
+      <div class="bg-light dark:bg-darkmode-light rounded p-6">
+        <ul>
+          {{ range $name, $items := site.Taxonomies.tags }}
+            <li class="inline-block">
+              {{ partial "components/tag-pill" (dict "Tag" .Page.Title "Active" (and (eq $.Page.Kind `term`) (eq $.Page.Type `tags`) (eq $.Page.Title .Page.Title))) }}
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  {{ end }}
+{{ end }}

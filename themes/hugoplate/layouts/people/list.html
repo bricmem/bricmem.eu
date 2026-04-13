@@ -1,0 +1,45 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        {{ range .RegularPages.ByParam "priority" }}
+          <div class="mb-14 md:col-6 flex">
+            <div
+              class="bg-light dark:bg-darkmode-light rounded p-6 h-full w-full">
+              <div class="grid grid-cols-[6rem_minmax(0,1fr)] gap-x-6">
+                <div class="flex items-center">
+                  {{ $personImage := .Params.image | default "/images/avatar.png" }}
+                  {{ partial "image" (dict "Src" $personImage "Context" .Page "Alt" .Title "Class" "h-[6rem] w-[6rem] rounded-full object-cover") }}
+                </div>
+                <div class="flex flex-col justify-center">
+                  <h4 class="mb-2">{{ .Title }}</h4>
+                  <p class="text-text-light dark:text-darkmode-text-light text-sm">
+                    {{ with .Params.role }}{{ . }}{{ end }}
+                    <span class="mx-2">&middot;</span>
+                    {{ with .Params.link }}
+                      {{ if $.Params.role }}
+                      {{ end }}
+                      <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">
+                        {{ . | safeURL }}
+                      </a>
+                    {{ end }}
+                  </p>
+                </div>
+                <div class="col-start-1 col-end-3 mt-3 text-justify">
+                  {{ with .Params.bio }}
+                    <p>{{ . }}</p>
+                  {{ else }}
+                    <p>{{ .Summary | plainify }}</p>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

@@ -1,2 +1,302 @@
-/* DO NOT WRITE ANY STYLE IN THIS FILE */
-/* If you want to add your own styles, please write it in the `./assets/css/custom.css` file. */
+/* Add your own custom styles here */
+
+input[type="range"] {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  margin: 0px;
+  height: 3px; /* Specified height */
+  background: #888; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+
+/* Mouse-over effects */
+input[type="range"]:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 0em; /* Set a specific slider handle width */
+  height: 0em; /* Slider handle height */
+  background: #000; /* Green background */
+  border: 0px;
+  cursor: pointer; /* Cursor on hover */
+}
+
+input[type="range"]::-webkit-slider-progress {
+  background: #000; /* Green background */
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 0em; /* Set a specific slider handle width */
+  height: 0em; /* Slider handle height */
+  background: #000; /* Green background */
+  border: 0px;
+  cursor: pointer; /* Cursor on hover */
+}
+
+input[type="range"]::-moz-range-progress {
+  background: #000; /* Green background */
+}
+
+:root {
+  --custom-chipart-text: #374151;
+  --custom-chipart-text-strong: #1f2937;
+  --custom-chipart-text-muted: #6b7280;
+  --custom-chipart-border: #d1d5db;
+  --custom-chipart-shell: #f3f4f6;
+  --custom-chipart-shell-alt: #e5e7eb;
+  --custom-chipart-panel: #f9fafb;
+  --custom-chipart-overlay: rgba(255, 255, 255, 0.75);
+  --custom-chipart-row: #d1d5db;
+  --custom-chipart-row-loading: #c4c9d1;
+  --custom-chipart-run-btn: rgba(255, 255, 255, 0.8);
+  --custom-chipart-run-btn-hover: #ffffff;
+  --custom-chipart-error: #dc2626;
+}
+
+.dark {
+  --custom-chipart-text: #b4afb6;
+  --custom-chipart-text-strong: #fffaf3;
+  --custom-chipart-text-muted: #d6ccc1;
+  --custom-chipart-border: #3e3e3e;
+  --custom-chipart-shell: #1c1c1c;
+  --custom-chipart-shell-alt: #222222;
+  --custom-chipart-panel: #1f1f1f;
+  --custom-chipart-overlay: rgba(28, 28, 28, 0.82);
+  --custom-chipart-row: #2b2b2b;
+  --custom-chipart-row-loading: #343434;
+  --custom-chipart-run-btn: rgba(34, 34, 34, 0.8);
+  --custom-chipart-run-btn-hover: rgba(45, 45, 45, 0.92);
+  --custom-chipart-error: #ff8d8d;
+}
+
+.custom-chipart-lead,
+.custom-chipart-body {
+  color: var(--custom-chipart-text);
+}
+
+.custom-chipart-shell {
+  position: relative;
+  z-index: 0;
+  border: 2px solid var(--custom-chipart-border);
+  background-color: var(--custom-chipart-shell);
+}
+
+.custom-chipart-shell--sticky {
+  position: sticky;
+  top: 5rem;
+  z-index: 20;
+}
+
+.custom-chipart-shell--unsticking {
+  animation: custom-chipart-unstick 180ms ease-out;
+}
+
+@keyframes custom-chipart-unstick {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-10px);
+    opacity: 0.94;
+  }
+}
+
+.custom-chipart-sticky-toggle {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--custom-chipart-border);
+  border-radius: 9999px;
+  background-color: var(--custom-chipart-panel);
+  color: var(--custom-chipart-text-muted);
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.custom-chipart-sticky-toggle:hover,
+.custom-chipart-sticky-toggle:focus-visible {
+  border-color: var(--custom-chipart-text-muted);
+  background-color: var(--custom-chipart-shell);
+  color: var(--custom-chipart-text-strong);
+}
+
+.custom-chipart-viewer-pane {
+  border-right: 2px solid var(--custom-chipart-border);
+  background-color: var(--custom-chipart-shell-alt);
+}
+
+.custom-chipart-output-overlay {
+  background-color: var(--custom-chipart-overlay);
+}
+
+.custom-chipart-output-title {
+  color: var(--custom-chipart-text-muted);
+}
+
+.custom-chipart-output-body {
+  color: var(--custom-chipart-text);
+}
+
+.custom-chipart-output-line {
+  margin: 0;
+  color: var(--custom-chipart-text);
+  white-space: pre;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+.custom-chipart-output-line--error {
+  color: var(--custom-chipart-error);
+}
+
+.custom-chipart-sidebar {
+  background-color: var(--custom-chipart-panel);
+}
+
+.custom-chipart-layers-title {
+  color: var(--custom-chipart-text-muted);
+}
+
+.custom-chipart-layers-list {
+  border-top: 2px solid var(--custom-chipart-border);
+}
+
+.custom-chipart-layers-list:empty::before {
+  content: "No layers shown.";
+  display: block;
+  margin: 0.75rem 0;
+  color: var(--custom-chipart-text-muted);
+  font-size: 0.875rem;
+}
+
+.custom-chipart-layer-item {
+  width: 100%;
+  margin: 0.5rem 0;
+  border-radius: 0.125rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--custom-chipart-border);
+  background-color: var(--custom-chipart-row);
+  color: var(--custom-chipart-text-strong);
+}
+
+.tag-pill {
+  --tag-base: #64748b;
+  display: block;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  background-color: color-mix(in srgb, var(--tag-base) 14%, #ffffff 86%);
+  color: color-mix(in srgb, var(--tag-base) 72%, #111827 28%);
+  border: 1px solid color-mix(in srgb, var(--tag-base) 30%, #ffffff 70%);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.tag-pill:hover,
+.tag-pill.active {
+  background-color: color-mix(in srgb, var(--tag-base) 92%, #ffffff 8%);
+  color: #ffffff;
+  border-color: color-mix(in srgb, var(--tag-base) 88%, #000000 12%);
+}
+
+.dark .tag-pill {
+  background-color: color-mix(in srgb, var(--tag-base) 22%, #0f172a 78%);
+  color: color-mix(in srgb, var(--tag-base) 55%, #e2e8f0 45%);
+  border-color: color-mix(in srgb, var(--tag-base) 38%, #0f172a 62%);
+}
+
+.dark .tag-pill:hover,
+.dark .tag-pill.active {
+  background-color: color-mix(in srgb, var(--tag-base) 76%, #0f172a 24%);
+  color: #f8fafc;
+  border-color: color-mix(in srgb, var(--tag-base) 82%, #020617 18%);
+}
+
+.custom-chipart-layer-item--loading {
+  background-color: var(--custom-chipart-row-loading);
+  animation: custom-chipart-pulse 1.2s ease-in-out infinite;
+}
+
+.custom-chipart-layer-name {
+  flex-grow: 1;
+  text-align: left;
+  color: var(--custom-chipart-text-strong);
+  font-weight: 600;
+}
+
+.custom-chipart-layer-actions {
+  text-align: right;
+  letter-spacing: 0.12em;
+  color: var(--custom-chipart-text-strong);
+}
+
+.custom-chipart-layer-action {
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.92;
+  transition: color 0.15s ease;
+}
+
+.custom-chipart-layer-action:hover {
+  color: var(--custom-chipart-text-strong);
+  opacity: 1;
+}
+
+.custom-chipart-run-btn {
+  border-color: var(--custom-chipart-border);
+  background-color: var(--custom-chipart-run-btn);
+  color: var(--custom-chipart-text-strong);
+  font-family: var(--font-primary);
+}
+
+.custom-chipart-run-btn:hover {
+  background-color: var(--custom-chipart-run-btn-hover);
+  color: var(--custom-chipart-text-strong);
+}
+
+.custom-chipart-scroll-block {
+  color: var(--custom-chipart-text-strong);
+}
+
+.custom-chipart-scroll-block-one {
+  background-color: var(--custom-chipart-panel);
+}
+
+.custom-chipart-scroll-block-two {
+  background-color: var(--custom-chipart-shell-alt);
+}
+
+@keyframes custom-chipart-pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.65;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
