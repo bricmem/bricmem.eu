@@ -17,14 +17,9 @@ url = "/people/"
 weight = 3
 
 [[main]]
-name = "News"
-url = "/blog/"
-weight = 4
-
-[[main]]
 name = "Positions"
 url = "/positions/"
-weight = 5
+weight = 4
 
 
 # footer menu
@@ -44,11 +39,6 @@ url = "/people/"
 weight = 3
 
 [[footer]]
-name = "News"
-url = "/blog/"
-weight = 4
-
-[[footer]]
 name = "Positions"
 url = "/positions/"
-weight = 5
+weight = 4
