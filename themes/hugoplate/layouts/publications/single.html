@@ -1,0 +1,30 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          {{ $authors := .Params.authors }}
+          {{ if $authors }}
+            <p class="mb-2 text-sm">{{ delimit $authors ", " }}</p>
+          {{ end }}
+
+
+          <p class="mb-8 text-sm text-text-light dark:text-darkmode-text-light">
+            {{ with .Params.journal }}{{ . }}{{ end }}
+            {{ with .Params.year }}
+              {{ if $.Params.journal }}{{ " " }}{{ end }}({{ . }})
+            {{ end }}
+          </p>
+
+          <div class="content">
+            <h3>Abstract</h3>
+            {{ .Content }}
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+{{ end }}

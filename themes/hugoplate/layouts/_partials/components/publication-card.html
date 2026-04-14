@@ -1,0 +1,33 @@
+<div
+  class="bg-body dark:bg-darkmode-body rounded border border-border dark:border-darkmode-border p-6 h-full">
+  <h4 class="mb-3">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h4>
+
+  {{ $authors := .Params.authors }}
+  {{ if $authors }}
+    <p class="mb-2 text-sm">{{ delimit $authors ", " }}</p>
+  {{ end }}
+
+
+  <p class="mb-4 text-sm text-text-light dark:text-darkmode-text-light">
+    {{ with .Params.journal }}{{ . }}{{ end }}
+    {{ with .Params.year }}
+      {{ if $.Params.journal }}{{ " " }}{{ end }}({{ . }})
+    {{ end }}
+    {{ with .Params.volume }}{{ ", " }}{{ . }}{{ end }}
+    {{ with .Params.issue }}({{ . }}){{ end }}
+    {{ with .Params.pages }}{{ ":" }}{{ . }}{{ end }}
+  </p>
+
+  <div class="text-sm">
+    {{ with .Params.doi }}
+      <a
+        href="https://doi.org/{{ . }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        >{{ . }}</a
+      >
+    {{ end }}
+  </div>
+</div>

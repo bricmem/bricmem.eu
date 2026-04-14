@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        {{ range .RegularPages.ByParam "priority" }}
+          <div class="md:col-6 mb-8 flex">
+            {{ partial "components/publication-card" . }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
