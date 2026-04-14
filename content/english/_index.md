@@ -22,7 +22,7 @@ features:
     bulletpoints:
       - "Can we leverage holographic vector representations and superposition to store information and compute more efficiently?"
       - "Can we exploit intrinsic stochasticity to further enhance storage capacity?"
-      - "Can communicate efﬁciently in time?"
+      - "Can we communicate efﬁciently in time?"
       - "Can we exploit the third spatial dimension to further enhance the storage capacity?"
     button:
       enable: false
