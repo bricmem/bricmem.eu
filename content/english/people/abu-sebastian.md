@@ -1,14 +1,16 @@
 ---
-title: "Abu Sebastian"
+title: "Prof. Dr. Abu Sebastian"
 role: "Principal Investigator"
-image: "/images/avatar.png"
+image: "/images/people/abu-sebastian.jpg"
 priority: 1
-link: "https://bricmem.eu"
+links:
+  - text: "Researcher Profile at IBM Research"
+    url: "https://research.ibm.com/people/abu-sebastian"
+  - text: "Google Scholar"
+    url: "https://scholar.google.com/citations?user=sUCQ7KMAAAAJ&hl=en&oi=ao"
 build:
   render: never
   list: always
 ---
 
-Abu Sebastian is a Distinguished Research Scientist at IBM Research – Zurich, where he leads the AI Compute Frontiers group in Rüschlikon, Switzerland. He is also affiliated to the Kirchhoff-Institut für Physik at Universität Heidelberg. Prof. Sebastian has authored over 200 peer-reviewed publications and holds more than 100 U.S. patents. For his contributions to micro- and nanoscale mechatronic systems, he was honored with the IEEE Control Systems Technology Award in 2009 and the IFAC Mechatronic Systems Young Researcher Award in 2013. His research in exploratory memory technologies and emerging computing paradigms has also earned him three prestigious European Research Council (ERC) grants: the Consolidator Grant (2015), the Proof-of-Concept Grant (2020), and the Advanced Grant (2025). At IBM, he was recognized as a Master Inventor and appointed Principal Research Staff Member in 2018, later becoming a Distinguished Research Staff Member in 2020. In 2019, he received the Ovshinsky Lectureship Award for his contributions to phase-change materials for cognitive computing. More recently, in 2023, he was honored with the Prof. L. K. Maheshwari Foundation Distinguished Alumnus Award from BITS Pilani. Prof. Sebastian has served on the technical program committees of leading conferences including IEDM, AICAS, NVMTS, and E\PCOS, and has been an editor or guest editor for journals such as Mechatronics, APL Materials, Applied Physics Letters, and IEEE Design and Test. He is a Fellow of the IEEE.
-
-
+I hold an affiliation with the Kirchhoff Institute for Physics at Heidelberg University. I am also a Distinguished Research Scientist at IBM Research, where I lead the AI Compute Frontiers group in Rüschlikon, Switzerland. My research focuses on emerging computing paradigms and exploratory memory technologies. My early research focused on modeling and controlling nanoscale physical systems, which led me to IBM Research–Zurich, where I explored novel data storage concepts based on micro‑ and nanoscale devices. This work sparked a long‑term research program on phase‑change memory (PCM), encompassing both fundamental device physics and the development of efficient circuits and algorithms. Since around 2015, my research has shifted toward in‑memory computing, culminating in the design and fabrication of advanced prototype chips that exploit memristive devices to tightly integrate computation and memory.

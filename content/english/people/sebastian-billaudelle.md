@@ -1,9 +1,11 @@
 ---
-title: "Sebastian Billaudelle"
-role: "Local group lead"
+title: "Dr. Sebastian Billaudelle"
+role: "Group lead"
 image: "/images/people/sebastian-billaudelle.jpg"
 priority: 2
-link: "https://scholar.billaudelle.me"
+link:
+  text: "Google Scholar"
+  url: "https://scholar.billaudelle.me"
 build:
   render: never
   list: always

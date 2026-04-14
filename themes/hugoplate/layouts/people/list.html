@@ -16,15 +16,40 @@
                 </div>
                 <div class="flex flex-col justify-center">
                   <h4 class="mb-2">{{ .Title }}</h4>
-                  <p class="text-text-light dark:text-darkmode-text-light text-sm">
+                  {{ $rawLinks := .Params.links | default .Params.link }}
+                  {{ $links := slice }}
+                  {{ if $rawLinks }}
+                    {{ if reflect.IsSlice $rawLinks }}
+                      {{ $links = $rawLinks }}
+                    {{ else }}
+                      {{ $links = slice $rawLinks }}
+                    {{ end }}
+                  {{ end }}
+                  <p
+                    class="text-text-light dark:text-darkmode-text-light text-sm">
                     {{ with .Params.role }}{{ . }}{{ end }}
-                    <span class="mx-2">&middot;</span>
-                    {{ with .Params.link }}
-                      {{ if $.Params.role }}
+                    {{ if gt (len $links) 0 }}<br />{{ end }}
+                    {{ range $i, $link := $links }}
+                      {{ $href := "" }}
+                      {{ $label := "" }}
+                      {{ if reflect.IsMap $link }}
+                        {{ $href = (index $link "url") | default (index $link "link") }}
+                        {{ $label = (index $link "text") | default $href }}
+                      {{ else }}
+                        {{ $href = $link }}
+                        {{ $label = $link }}
                       {{ end }}
-                      <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">
-                        {{ . | safeURL }}
-                      </a>
+                      {{ if $href }}
+                        {{ if gt $i 0 }}
+                          <span class="mx-2">&middot;</span>
+                        {{ end }}
+                        <a
+                          href="{{ $href | safeURL }}"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >{{ $label }}</a
+                        >
+                      {{ end }}
                     {{ end }}
                   </p>
                 </div>
