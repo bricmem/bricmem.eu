@@ -15,7 +15,7 @@ logo_text = "BRICMEM"
 # navbar fixed to top
 navbar_fixed = true
 # theme-mode
-theme_switcher = true
+theme_switcher = false
 theme_default = "dark" # available options [light/dark/system]
 # Main Sections
 mainSections = ["blog"]
@@ -44,7 +44,7 @@ link = "https://github.com/zeon-studio/hugoplate"
 # search
 # search module: https://github.com/gethugothemes/hugo-modules/tree/master/search
 [search]
-enable = true
+enable = false
 primary_color = "#121212"
 include_sections = ["blog"]
 show_image = true
