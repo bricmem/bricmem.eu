@@ -12,7 +12,7 @@ features:
     </div>
     "
     button:
-      enable: true
+      enable: false
       label: "Open positions and projects"
       link: "/positions"
 
@@ -29,16 +29,11 @@ features:
       label: "View Publications"
       link: "/publications/"
 
-  # - title: "Impact & Vision"
-  #   image: "/images/service-3.png"
-  #   content: "By combining biological insights with cutting-edge computational memory prototypes, BRICMEM aims to redefine the landscape of AI hardware."
-  #   bulletpoints:
-  #     - "Experimental validation using current and future CIM prototypes"
-  #     - "Novel mathematical functions operating on elapsed time"
-  #     - "Enhanced weight capacity through three-dimensional architectures"
-  #     - "Revolutionary brain-inspired computational memory systems"
-  #   button:
-  #     enable: true
-  #     label: "Join Our Team"
-  #     link: "/positions/"
+  - title: "The group"
+    image: "/images/people/abu-and-sebastian.jpg"
+    content: "We are a young and growing group and are continuously looking for new people and ideas."
+    button:
+      enable: true
+      label: "Open positions and projects"
+      link: "/positions"
 ---
