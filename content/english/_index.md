@@ -1,7 +1,7 @@
 ---
 # Features
 features:
-  - title: "Brain-Inspired In-Memory Computing"
+  - title: "Brain-Inspired Computational Memory"
     image: "/images/bricmem-pillars.png"
     content: "The BRICMEM project pushes the boundaries of in-memory computing for and beyond traditional machine learning applications by leveraging stochasticity, hyperdimensional representations, and the superposition principle. We are exploring this topic from all angles ranging from theory to experimental validation on existing and custom state-of-the-art hardware platforms.
 
@@ -31,7 +31,7 @@ features:
 
   - title: "The group"
     image: "/images/people/abu-and-sebastian.jpg"
-    content: "We are a young and growing group and are continuously looking for new people and ideas."
+    content: "We are a growing team with a strong interest in welcoming new members and innovative ideas."
     button:
       enable: true
       label: "Open positions and projects"
