@@ -10,5 +10,5 @@
   class="tag-pill{{ if $active }}active{{ end }}"
   {{ if $baseColor }}style="--tag-base: {{ $baseColor }};"{{ end }}
   href="{{ `tags/` | relLangURL }}{{ $slug }}/">
-  {{ $tag | humanize }}
+  {{ $tag }}
 </a>

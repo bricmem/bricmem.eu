@@ -2,6 +2,9 @@
 title: "Dense Associative Memory for Resonator Networks"
 image: "/images/positions/dam-resonator-networks-banner.jpg"
 image_credit: "Photo based on Langenegger et al. (2023)."
+tags:
+  - Master's project
+  - PhD project
 ---
 
 Resonator networks solve combinatorial factorization problems by iteratively refining candidate factors in superposition, and have shown strong performance for decoding compositional vector-symbolic representations[¹](#frady2020resonator).

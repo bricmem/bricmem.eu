@@ -2,6 +2,9 @@
 title: "Demonstrating Dense Associative Memory on an In-Memory Computing prototype"
 image: "/images/positions/dam-on-hermes-banner.jpg"
 image_credit: "Photo based on Hoover et al. (2025)"
+tags:
+  - Master's project
+  - PhD project
 ---
 
 Hopfield networks are enjoying renewed interest as simple dynamical systems that can store memories as attractors and recover them from noisy or incomplete inputs.
